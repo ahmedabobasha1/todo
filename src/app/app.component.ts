@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Todo } from './todo.model';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'todo';
+  todos: Todo[] = [];
+
+  onAddTodo(todo: Todo) {
+    this.todos.push(todo);
+  }
+
+  onDelete(index: number) {
+    this.todos.splice(index, 1);
+  }
+
+  onToggle(index: number) {
+    this.todos[index].completed = !this.todos[index].completed;
+  }
 }

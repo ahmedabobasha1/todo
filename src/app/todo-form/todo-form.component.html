@@ -1,0 +1,5 @@
+<h2>Add new Todo</h2>
+<form (submit)="addTask()">
+    <input type="text" [(ngModel)]="todoText" [ngModelOptions]="{ standalone: true }" placeholder="Enter task description" />
+    <button type="submit">Add</button>
+</form>

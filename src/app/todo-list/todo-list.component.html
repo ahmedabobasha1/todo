@@ -1,0 +1,8 @@
+<h2>Todo List</h2>
+<ul>
+    <li *ngFor="let todo of todos; let i = index" [ngClass]="{ 'completed': todo.completed }">
+        <span>{{ todo.text }}</span>
+        <button (click)="onDelete(i)">Delete</button>
+        <button (click)="onToggle(i)">{{ todo.completed ? 'Undo' : 'Complete' }}</button>
+    </li>
+</ul>
